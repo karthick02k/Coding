@@ -1,0 +1,19 @@
+package com.kart;
+
+public class Squarepat {
+
+	    public static void main(String[] args) {
+	        int rows = 7; 
+
+	        int size = rows / 2 + 1;
+
+	        for (int i = 1; i <= rows; i++) {
+	            for (int j = 1; j <= rows; j++) {
+	            	
+	                int num = Math.max(Math.abs(i - size), Math.abs(j - size)) + 1;
+	                System.out.print(num + " ");
+	            }
+	            System.out.println(); 
+	        }
+	    }
+	}
