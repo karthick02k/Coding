@@ -1,0 +1,26 @@
+package com.kart;
+
+public class Wordlength {
+
+	    public static void countCharacters(String input) {
+	        String[] words = input.split("\\s+");
+	        
+	        for (String word : words) {
+	            
+	            int length = word.length();
+	           
+	            String type = (length % 2 == 0) ? "even" : "odd";
+	          
+	            System.out.println("Word: " + word + ", Length: " + length + ", Type: " + type);
+	        }
+	    }
+	    
+	    public static void main(String[] args) {
+	        String inputString = "Hi everyone";
+	        countCharacters(inputString);
+	    }
+	}
+
+
+
+
