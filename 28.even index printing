@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class SumEvenIndices {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of values: ");
+        int N = scanner.nextInt();
+
+        int[] values = new int[N];
+
+        System.out.println("Enter the values:");
+        for (int i = 0; i < N; i++) {
+            values[i] = scanner.nextInt();
+        }
+
+        int sumEvenIndices = 0;
+        for (int i = 0; i < N; i += 2) {
+            sumEvenIndices += values[i];
+        }
+
+        System.out.println("Sum of values at even indices: " + sumEvenIndices);
+    }
+}
