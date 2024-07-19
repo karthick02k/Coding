@@ -1,0 +1,23 @@
+package com.kart;
+import java.util.*;
+public class Ascii {
+
+	public static void main(String[] args) {
+
+		        Scanner scanner = new Scanner(System.in);
+		        System.out.print("Enter a string: ");
+		        String input = scanner.nextLine();
+		        scanner.close();
+		        printAsciiValues(input);
+		    }
+
+		    public static void printAsciiValues(String input) {
+		        System.out.println("ASCII values for characters in the string:");
+		        for (int i = 0; i < input.length(); i++) {
+		            char c = input.charAt(i);
+		            int asciiValue = (int) c; 
+		            System.out.println(c + ": " + asciiValue);
+		        }
+		    }
+		}
+
