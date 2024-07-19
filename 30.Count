@@ -1,0 +1,49 @@
+package com.kart;
+import java.util.Scanner;
+
+public class Values {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        int upperCaseCount = 0;
+        int lowerCaseCount = 0;
+        int digitCount = 0;
+        int specialCharCount = 0;
+        int vowelCount = 0;
+        int totalCount = input.length();
+
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            if (Character.isUpperCase(ch)) {
+                upperCaseCount++;
+            } else if (Character.isLowerCase(ch)) {
+                lowerCaseCount++;
+            } else if (Character.isDigit(ch)) {
+                digitCount++;
+            } else if (!Character.isLetterOrDigit(ch)) {
+                specialCharCount++;
+            }
+
+            if (isVowel(ch)) {
+                vowelCount++;
+            }
+        }
+
+        System.out.println("Uppercase letters: " + upperCaseCount);
+        System.out.println("Lowercase letters: " + lowerCaseCount);
+        System.out.println("Digits: " + digitCount);
+        System.out.println("Special characters: " + specialCharCount);
+        System.out.println("Vowels: " + vowelCount);
+        System.out.println("Total characters: " + totalCount);
+
+    }
+
+    public static boolean isVowel(char ch) {
+        ch = Character.toLowerCase(ch);
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+}
