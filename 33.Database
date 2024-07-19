@@ -1,0 +1,16 @@
+CREATE TABLE Students (
+    Regno INT PRIMARY KEY,
+    name VARCHAR(100),
+    address VARCHAR(255),
+    age INT,
+    mark_1 FLOAT,
+    mark_2 FLOAT,
+    mark_3 FLOAT,
+    mark_4 FLOAT,
+    mark_5 FLOAT
+);
+
+INSERT INTO Students (Regno, name, address, age, mark_1, mark_2, mark_3, mark_4,mark_5)
+VALUES 
+    (100, 'Hari', '123 st street', 20,80.4,67.4,78.4,82.9,79.8),
+    (101, 'Jagan', '456 light street', 21,80.4,67.4,78.4,82.9,79.8);
