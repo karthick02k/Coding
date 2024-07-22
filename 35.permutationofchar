@@ -1,0 +1,47 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class PermutationsOfCharacters {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter characters: ");
+        String input = scanner.nextLine().trim();
+        scanner.close();
+        
+        if (input.isEmpty()) {
+            System.out.println("Input must not be empty.");
+            return;
+        }
+        
+        Set<String> permutations = generatePermutations(input);
+        
+        System.out.println("Permutations of " + input + " with length " + input.length() + ":");
+        permutations.forEach(System.out::println);
+    }
+
+    public static Set<String> generatePermutations(String input) {
+        Set<String> result = new HashSet<>();
+        permute(input.toCharArray(), 0, result);
+        return result;
+    }
+
+    private static void permute(char[] array, int index, Set<String> result) {
+        if (index == array.length) {
+            result.add(new String(array));
+            return;
+        }
+        for (int i = index; i < array.length; i++) {
+            swap(array, index, i);
+            permute(array, index + 1, result);
+            swap(array, index, i);   
+        }
+    }
+
+    private static void swap(char[] array, int i, int j) {
+        char temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
